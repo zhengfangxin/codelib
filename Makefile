@@ -7,12 +7,10 @@ CFLAGS = -g -O2 -Wall -fPIC $(MYCFLAGS)
 # CFLAGS += -D_DEBUG -DDEBUG
 
 ALLCFILE=config file_sys pubfunc thread_api zstring\
- cJSON des md5 sha1 getopt buf thread_lock datalist
+ buf thread_lock datalist
 
 ALLOBJ=$(foreach v,$(ALLCFILE),obj/$(v).o)
 
-vpath %.h cJSON:encrypt:getopt
-vpath %.c cJSON:encrypt:getopt
 
 .PHONY : install uninstall clean
 
